@@ -53,7 +53,8 @@ def run(username: str,                         # CIS username
         ISUN   : int = 10,
         LSUN   : str = 'T',
         LENN   : int = 1,
-        IPARM  : int = 12
+        IPARM  : int = 12,
+        H2OAER : str = ' '
         ) -> dict:
     """Runs MODTRAN4, Version 3, Revision 1 on RIT's Center for Imaging Science Linux servers.
 
@@ -407,7 +408,9 @@ def run(username: str,                         # CIS username
     Do not read in user-defined instrument filter function
     """
 
-    H2OAER : str = 'T'
+    # Changed to input parameter. default value=' '
+    # 22-02-24
+    # H2OAER : str = 'T'
     """
     Aerosol optical properties are modified to reflect the changes
     from the original relative humidity profile arising from the
@@ -621,7 +624,7 @@ def run(username: str,                         # CIS username
         [LSUNFL,     'LSUNFL',    str,      2,       LSUNFL in ['T', 'F', '1', '2', '3', '4']],
         [LBMNAM,     'LBMNAM',    str,      2,       LBMNAM in ['T', 'F']],
         [LFLTNM,     'LFLTNM',    str,      2,       LFLTNM in ['T', 'F']],
-        [H2OAER,     'H2OAER',    str,      2,       H2OAER in ['T', 'F']],
+        [H2OAER,     'H2OAER',    str,      2,       H2OAER in ['T', 'F', ' ']],
         ['  ',       '2space',    str,      2,       True],
         [LDATDR,     'LDATDR',    str,      5,       LDATDR in ['T', '']],  # 'F' causes an error apparently...
         [SOLCON,     'SOLCON',    int,      5,       True]
